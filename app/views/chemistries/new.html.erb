@@ -10,19 +10,19 @@
       <%= f.date_field :test_date, :class=>"form-control" %>
       
       <%= f.label :water_ph, "Water pH" %>
-      <%= f.number_field :water_ph, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+      <%= f.number_field :water_ph, :in => 0..100, :step => 0.01, :class=>"form-control" %>
 
       <%= f.label :water_nh3, "Ammonia" %>
-      <%= f.number_field :water_nh3, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+      <%= f.number_field :water_nh3, :in => 0..100, :step => 0.01, :class=>"form-control" %>
 
       <%= f.label :water_no3, "Nitrite" %>
-      <%= f.number_field :water_no3, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+      <%= f.number_field :water_no3, :in => 0..100, :step => 0.01, :class=>"form-control" %>
       
       <%= f.label :water_no2, "Nitrate" %>
-      <%= f.number_field :water_no2, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+      <%= f.number_field :water_no2, :in => 0..100, :step => 0.01, :class=>"form-control" %>
       
       <%= f.label :water_temp, "Temperature" %>
-      <%= f.number_field :water_temp, :min=>"60", :max=>"100", :pattern=>"\d*", :class=>"form-control" %>
+      <%= f.number_field :water_temp, :in => 0..100, :step => 0.01, :class=>"form-control" %>
 
 
       <%= f.submit "Save", class: "btn btn-primary col-md-4 col-xs-4" %>
