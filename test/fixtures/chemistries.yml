@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  water_ph: 1.5
+  water_nh3: 1.5
+  water_no3: 1.5
+  water_no2: 1.5
+  water_temp: 1.5
+  test_date: 2013-11-27
+  aquarium_id: 
+
+two:
+  water_ph: 1.5
+  water_nh3: 1.5
+  water_no3: 1.5
+  water_no2: 1.5
+  water_temp: 1.5
+  test_date: 2013-11-27
+  aquarium_id: 

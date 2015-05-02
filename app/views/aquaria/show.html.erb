@@ -1,0 +1,34 @@
+<% provide(:title, 'Aquarium Details') %>
+<div class="panel panel-default">
+	<div class="panel-heading"><h3 class="panel-title">Aquarium Details</h3></div>
+	<div class="panel-body">
+		<div class="table-responsive">
+			<table class="table table-striped table-condensed">
+				<thead>
+					<tr>
+						<th class="hidden-xs">ID</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Gallons</th>
+						<th>Type</th>
+						<th>Status</th>
+						<th class="hidden-xs">Notes</th>    
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="hidden-xs"><%= @aquarium.id %></td>
+						<td><%= @aquarium.name %></td>
+						<td><%= @aquarium.location %></td>
+						<td><%= @aquarium.gallons %></td>
+						<td><%= @aquarium.water_type %></td>
+						<td><%= @aquarium.status %></td>
+						<td class="hidden-xs"><%= @aquarium.notes %></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<%= render "chemistries/show" %>
+<%= render "inhabitants/show" %>

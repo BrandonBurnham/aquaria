@@ -1,0 +1,25 @@
+<% provide(:title, 'Record Chemistry') %>
+<h1>Edit an Inhabitant</h1>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for([@aquarium, @inhabitant] ) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :inhabitant_type %>
+      <%= f.text_field :inhabitant_type, :class=>"form-control" %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, :class=>"form-control" %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, :rows=>"6", :class=>"form-control" %>
+
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity, :class=>"form-control", :pattern=>"\d*" %>
+      
+      <%= f.submit "Update", class: "btn btn-primary col-md-4 col-xs-4" %>
+      <%= link_to "Cancel", aquarium_path(@aquarium.id), :class=>"btn btn-default col-md-4 col-md-offset-1 col-xs-4 col-xs-offset-1" %>
+    <% end %>
+  </div>
+</div>

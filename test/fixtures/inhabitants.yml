@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inhabitant_type: MyString
+  name: MyString
+  description: MyString
+  quantity: 1
+  aquarium_id: 
+
+two:
+  inhabitant_type: MyString
+  name: MyString
+  description: MyString
+  quantity: 1
+  aquarium_id: 

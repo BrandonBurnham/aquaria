@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+
+<div class="panel-heading"><h3 class="panel-title">Water History</h3></div>
+
+<div class="panel-body">
+
+<div class="table-responsive">
+
+<table class="table table-striped table-condensed">
+	<thead>
+		<tr>
+			<th class="hidden-xs">ID</th>
+			<th>Date</th>
+			<th>pH</th>
+			<th>Ammonia</th>
+			<th>Nitrite</th>
+			<th>Nitrate</th>
+			<th>Temperature</th>
+			<th class="hidden-print">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @aquarium.chemistries.each do |a| %>
+			<tr>
+				<td class="hidden-xs"><%= a.id %></td>
+				<td><%= a.test_date %></td>
+				<td><%= a.water_ph %></td>
+				<td><%= a.water_nh3 %></td>
+				<td><%= a.water_no3 %></td>
+				<td><%= a.water_no2 %></td>
+				<td><%= a.water_temp %></td>
+				<td class="hidden-print">
+					<%= link_to "", edit_aquarium_chemistry_path(:id=> a.id, :aquarium_id=>a.aquarium_id),
+	  						:id=>a.id,
+	  						:aquarium_id=>a.aquarium_id,
+	  						:class=>"glyphicon glyphicon-pencil glyphicon-danger",
+	  						:title=>"Edit" %>
+	  				<%= link_to "", aquarium_chemistry_path(:id=> a.id, :aquarium_id=>a.aquarium_id),
+	  														method: :delete,
+	  														data: { confirm: 'Are you sure?'},
+	  														:class=> "glyphicon glyphicon-trash",
+	  														:title=> "Delete" %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+<%= link_to "Add Record", new_aquarium_chemistry_path(:aquarium_id=>@aquarium), :class=>"btn btn-primary btn-sm hidden-print" %>
+</div>
+</div>

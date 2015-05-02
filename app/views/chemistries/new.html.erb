@@ -1,0 +1,32 @@
+<% provide(:title, 'Record Chemistry') %>
+<h1>Record Checmisty</h1>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for([@aquarium, @chemistry] ) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :test_date, "Date" %>
+      <%= f.date_field :test_date, :class=>"form-control" %>
+      
+      <%= f.label :water_ph, "Water pH" %>
+      <%= f.number_field :water_ph, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+
+      <%= f.label :water_nh3, "Ammonia" %>
+      <%= f.number_field :water_nh3, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+
+      <%= f.label :water_no3, "Nitrite" %>
+      <%= f.number_field :water_no3, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+      
+      <%= f.label :water_no2, "Nitrate" %>
+      <%= f.number_field :water_no2, :min=>"0", :max=>"10", :pattern=>"\d*", :class=>"form-control" %>
+      
+      <%= f.label :water_temp, "Temperature" %>
+      <%= f.number_field :water_temp, :min=>"60", :max=>"100", :pattern=>"\d*", :class=>"form-control" %>
+
+
+      <%= f.submit "Save", class: "btn btn-primary col-md-4 col-xs-4" %>
+      <%= link_to "Cancel", aquarium_path(@aquarium.id), :class=>"btn btn-default col-md-4 col-md-offset-1 col-xs-4 col-xs-offset-1" %>
+    <% end %>
+  </div>
+</div>

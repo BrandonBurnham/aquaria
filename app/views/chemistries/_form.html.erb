@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for([@aquarium, @aquarium.chemistries.build] ) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :test_date, "Date" %>
+      <%= f.text_field :test_date %>
+
+      <%= f.label :water_ph, "pH" %>
+      <%= f.text_field :water_ph %>
+
+      <%= f.label :water_nh3, "Ammonia" %>
+      <%= f.text_field :water_nh3 %>
+
+      <%= f.label :water_no3, "Nitrite" %>
+      <%= f.text_field :water_no3 %>
+      
+      <%= f.label :water_no2, "Nitrate" %>
+      <%= f.text_field :water_no3 %>
+      
+      <%= f.label :water_temp, "Temperature" %>
+      <%= f.text_field :water_temp %>
+
+      <%= f.submit "Record Chemisrty", class: "btn btn-primary" %>
+      <%= link_to "Cancel", aquaria_path, :class=>"btn btn-larg" %>
+    <% end %>
+  </div>
+</div>

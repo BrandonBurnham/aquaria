@@ -1,0 +1,29 @@
+<% provide(:title, 'Edit Aquarium') %>
+<h1>Edit Aquarium</h1>
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for(@aquarium) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, :class=>"form-control" %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location, :class=>"form-control" %>
+
+      <%= f.label :gallons, "Size (gallons)" %>
+      <%= f.number_field :gallons, :class=>"form-control" %>
+
+      <%= f.label :water_type, "Water Type" %>
+      <%= f.select(:water_type, Foo.order('name ASC').all.collect {|a| [a.name]}, { :include_blank => true }, :class=>"form-control") %>
+      
+      <%= f.label :status, "Status" %>
+      <%= f.select(:status, StatusList.order('name ASC').all.collect {|a| [a.name]}, { :include_blank => true }, :class=>"form-control") %>
+      
+      <%= f.label :notes %>
+      <%= f.text_area :notes, :class=>"form-control", :rows=>"4" %>
+
+      <%= f.submit "Update", class: "btn btn-primary col-md-4 col-xs-4" %>
+      <%= link_to "Cancel", aquaria_path, :class=>"btn btn-default col-med-4 col-md-offset-1 col-xs-4 col-xs-offset-1" %>
+    <% end %>
+  </div>
+</div>
